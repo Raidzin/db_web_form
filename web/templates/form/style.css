@@ -1,0 +1,116 @@
+:root {
+    --MainFont: 'Montserrat', sans-serif;
+    --ContainerBG: linear-gradient(-110deg, #abcdef, #6495ed);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: var(--MainFont);
+    min-width: 500px;
+}
+
+@media (max-width: 990px) {
+    nav li {
+        margin-left: 3%;
+    }
+}
+
+main {
+    width: 100%;
+    padding-top: 3%;
+}
+
+fieldset {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-left: 12.5%;
+  width: 75%;
+  border-radius: 3px;
+  border: 1px solid #666;
+  border-radius: 10px;
+
+  background-image: var(--ContainerBG);
+
+  position: relative;
+}
+
+fieldset + fieldset {
+  margin-top: 40px;
+}
+
+fieldset div {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 75%;
+    max-width: 750px;
+}
+
+@media (min-width: 1100px) {
+    fieldset div {
+        padding: 5px;
+    }
+
+    fieldset {
+        margin-left: 20%;
+        width: 60%;
+    }
+}
+
+fieldset > *:nth-child(2) { margin-top: 10px; }
+fieldset > *:last-child { margin-bottom: 10px; }
+
+input {
+    border-radius: 10px;
+}
+
+legend {
+  background: #7393B3;
+  width: fit-content;
+
+  font-size: 1.1em;
+  font-weight: 600;
+  padding: 5px 10px;
+  color: white;
+  text-shadow: 1px 1px black;
+  margin-bottom: 10px;
+  border-radius: 10px;
+
+  position: absolute;
+  top: -20px;
+  left: -35px;
+}
+
+.form-Wrapper {
+  padding: 10px;
+}
+
+.form-Input_Wrapper, .form-List_Wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.form-Input_Wrapper label, .form-List_Wrapper label {
+  color: 888;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+fieldset input {
+  transition: all 0.5s ease-out;
+}
+
+fieldset input:hover, fieldset select {
+    cursor: pointer;
+}
+
+fieldset input:focus {
+  transform: scale(1.05);
+  transition: all 0.5s ease-out;
+}

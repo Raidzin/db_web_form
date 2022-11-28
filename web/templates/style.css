@@ -1,0 +1,87 @@
+:root {
+    --MainFont: 'Montserrat', sans-serif;
+    --ContainerBG: linear-gradient(-110deg, #abcdef, #6495ed);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: var(--MainFont);
+    min-width: 500px;
+}
+
+@media (max-width: 990px) {
+    nav li {
+        margin-left: 3%;
+    }
+}
+
+main {
+    width: 100%;
+    padding: 5px;
+}
+
+.modal {
+    visibility: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+
+    width: 50%;
+    height: auto;
+    margin-left: 25%;
+    margin-top: 25%;
+    padding: 10px;
+
+    background: var(--ContainerBG);
+    border: 1px solid black;
+}
+
+.btn-outline-primary {
+    margin: 20px 0 20px 3%;
+    width: fit-content;
+}
+
+.container {
+    min-width: 500px;
+}
+
+.prod{
+    min-width: 500px;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+.row {
+    background-image: var(--ContainerBG);
+    background-clip: border-box;
+}
+
+/*first table row*/
+.row:nth-child(2) > * {
+    background: rgba(255,255,255, 0.3);
+    font-weight: 600;
+}
+
+.row > * {
+    border: 1px solid rgba(206, 206, 206);
+    padding: 10px;
+}
+
+.col-4 {
+    width: 40%;
+}
+
+.col {
+    width: 15%;
+    word-wrap: break-word;
+}
+
+.col-2 {
+    width: 30%;
+}

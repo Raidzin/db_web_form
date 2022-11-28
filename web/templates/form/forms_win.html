@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- JavaScript and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-xxl">
+            <img src="https://upload.wikimedia.org/wikipedia/ru/0/04/GAZ-group-logo-2015.svg">
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+              
+              <li class="nav-item">
+                <a class="nav-link" href="../main.html">Предприятия</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="../unitmeas.html">Единицы измерения</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="../products.html">Товары</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="../forms.html">Форма накладной</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <main>
+
+        <form class="form-Wrapper">
+           <fieldset>
+                <legend>Шапка</legend> 
+
+                <div class="form-Input_Wrapper">
+                    <input id="number" name="number" type="text" required />
+                    <label for="number">Номер накладной</label>
+                </div>
+
+                <div class="form-Input_Wrapper">
+                    <input id="date" name="date" type="text" required />
+                    <label for="date">Дата накладной</label>
+                </div>
+
+                <div class="form-List_Wrapper">
+                  <select>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="vw">VW</option>
+                  </select>
+                  <label for="date">Отправитель</label>
+                </div>
+
+                <div class="form-List_Wrapper">
+                  <select>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="vw">VW</option>
+                  </select>
+                  <label for="date">Получатель</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Состав</legend>
+
+                <div class="form-List_Wrapper">
+                  <select>
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="vw">VW</option>
+                  </select>
+                  <label for="date">Наименование ТМЦ</label>
+                </div>
+
+                <div class="form-Input_Wrapper">
+                    <input id="number" name="number" type="text" required />
+                    <label for="number">Количество</label>
+                </div>
+
+                <div class="form-Input_Wrapper">
+                    <input id="number" name="number" type="text" required />
+                    <label for="number">Цена</label>
+                </div>
+
+                <div class="form-List_Wrapper">
+                    <select>
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="vw">VW</option>
+                    </select>
+                    <label for="date">Единицы измерения</label>
+                </div>
+
+            </fieldset>
+
+        </form>
+
+    </main>
+
+      
+</body>
+</html>
