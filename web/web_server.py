@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 
+from db_interface import DataBase
 app = Flask(__name__)
 
 

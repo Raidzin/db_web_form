@@ -1,5 +1,4 @@
-from db_interface import get_departments_tree
-from functions.print_functions import print_tree
+from web.web_server import start_server
 
 if __name__ == '__main__':
-    print_tree(get_departments_tree())
+    start_server()

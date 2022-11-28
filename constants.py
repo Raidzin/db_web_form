@@ -17,6 +17,7 @@ if DIALECT == 'oracle':
     CONNECT_STRING = f'{DIALECT}+{SQL_DRIVER}://{USERNAME}:{PASSWORD}@{HOST}:{PORT}/?service_name={SERVICE}'
 else:
     DB_FILE = getenv('DB_FILE')
+    CLIENT_DIR = None
     CONNECT_STRING = f"sqlite:///{DB_FILE}"
 
 """

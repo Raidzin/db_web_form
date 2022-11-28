@@ -1,8 +1,21 @@
 import sqlalchemy as db
-from sqlalchemy.orm import declarative_base, relationship
+from sqlalchemy.orm import declarative_base, relationship, declared_attr
+
+TABLE_NAMES = {
+    'Partners': 'partners_hktn',
+    'Tovar': 'tovar_hktn',
+    'Unit': 'unit_hktn',
+    'Head': 'head_hktn',
+    'Summary': 'summary_hktn',
+}
 
 
 class PreBase:
+
+    @declared_attr
+    def __tablename__(cls):
+        return TABLE_NAMES[cls.__name__]
+
     id = db.Column(db.Integer, primary_key=True)
 
 
@@ -29,17 +42,8 @@ class AuditMixin:
 #     def __repr__(self):
 #         return f'{self.name}'
 
-TABLE_NAMES = {
-    'Partners': 'partners_hktn',
-    'Tovar': 'tovar_hktn',
-    'Unit': 'unit_hktn',
-    'Head': 'head_hktn',
-    'Summary': 'summary_hktn',
-}
-
 
 class Partners(Base, AuditMixin):
-    __tablename__ = TABLE_NAMES['Partners']
     name = db.Column(db.String(150))
     inn = db.Column(db.String(12))
     kpp = db.Column(db.String(9))
@@ -47,21 +51,18 @@ class Partners(Base, AuditMixin):
 
 
 class Tovar(Base, AuditMixin):
-    __tablename__ = TABLE_NAMES['Tovar']
     nom_number = db.Column(db.String(20))
     name_tmc = db.Column(db.String(1500))
     name_tmc_kd = db.Column(db.String(37))
 
 
 class Unit(Base, AuditMixin):
-    __tablename__ = TABLE_NAMES['Unit']
     unit = db.Column(db.String(50))
     name_unit = db.Column(db.String(150))
     okei = db.Column(db.String(4))
 
 
 class Head(Base, AuditMixin):
-    __tablename__ = TABLE_NAMES['Head']
     doc_number = db.Column(db.String(50))
     doc_date = db.Column(db.Date)
     polych_id = db.Column(db.Integer, db.ForeignKey(Partners.id))
@@ -69,7 +70,6 @@ class Head(Base, AuditMixin):
 
 
 class Summary(Base, AuditMixin):
-    __tablename__ = TABLE_NAMES['Summary']
     quantity = db.Column(db.Float)
     price = db.Column(db.Float)
     head_id = db.Column(db.Integer, db.ForeignKey(Head.id))

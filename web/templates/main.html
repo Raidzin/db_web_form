@@ -2,9 +2,190 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <h1>Hello, World!</h1>
+    <!-- JavaScript and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-xxl">
+            <img src="https://upload.wikimedia.org/wikipedia/ru/0/04/GAZ-group-logo-2015.svg">
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+              
+              <li class="nav-item">
+                <a class="nav-link" href="../templates/main.html">Предприятия</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="../templates/unitmeas.html">Единицы измерения</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="../templates/products.html">Товары</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="../templates/forms.html">Форма накладной</a>
+              </li>
+
+            </ul>
+
+            <button type="button" id="create" class="btn btn-outline-primary">Создать запись</button>
+          </div>
+        </div>
+      </nav>
+
+    <main>
+
+        <div class="modal">
+            <label for="name">Название</label>
+            <input id="name" type="text" name="name">
+
+            <label for="inn">ИНН</label>
+            <input id="inn" type="text" name="inn">
+
+            <label for="kpp">КПП</label>
+            <input id="kpp" type="text" name="kpp">
+
+            <label for="address">Адрес</label>
+            <input id="address" type="text" name="address">
+
+            <div>
+                <button type="button" class="btn btn-outline-primary">Добавить</button>
+                <button type="button" id="close" class="btn btn-outline-primary">Закрыть</button>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <h1>Предприятия</h1>
+            
+            <div class="row">
+                <div class="col-2">
+                    Название
+                </div>
+                <div class="col">
+                    ИНН
+                </div>
+                <div class="col">
+                    КПП
+                </div>
+                <div class="col-4">
+                    Адрес
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-2">
+                  АЗ ГАЗ
+                </div>
+                <div class="col">
+                  3209789000
+                </div>
+                <div class="col">
+                  1209380092
+                </div>
+                <div class="col-4">
+                    г. Нижний Новгород, ул. Калинина, з. 231
+                </div>
+            </div>
+          
+
+            <div class="row">
+                <div class="col-2">
+                    Союз
+                </div>
+                <div class="col">
+                    1209789000
+                </div>
+                <div class="col">
+                    1989380092
+                </div>
+                <div class="col-4">
+                    г. Нижний Новгород, ул. Маркса, з. 1, к. 5
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-2">
+                    Дилерский центр "Соболь"
+                </div>
+                <div class="col">
+                    2399789000
+                </div>
+                <div class="col">
+                    1000380092
+                </div>
+                <div class="col-4">
+                    г. Богородск, ул. Ленина, д. 12, к. 9
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-2">
+                    Старый рог
+                </div>
+                <div class="col">
+                    9099789000
+                </div>
+                <div class="col">
+                    9989380092
+                </div>
+                <div class="col-4">
+                    г. Нижний Новгород, ул. Гоголя, з. 19, к. 58
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-2">
+                    Самара
+                </div>
+                <div class="col">
+                    9999789000
+                </div>
+                <div class="col">
+                    4244480092
+                </div>
+                <div class="col-4">
+                    г. Нижний Новгород, ул. Комсомольская, д. 1
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script type="text/javascript">
+        let openBtn = document.getElementById("create");
+        let closeBtn = document.getElementById("close");
+
+        let modal = document.getElementsByClassName("modal")[0];
+
+        openBtn.addEventListener("click", () => {
+            if(window.getComputedStyle(modal).visibility === "hidden") {
+                modal.style.visibility = "visible";
+            }
+        });
+
+        closeBtn.addEventListener("click", () => {
+            if(window.getComputedStyle(modal).visibility === "visible") {
+                modal.style.visibility = "hidden";
+            }
+        });
+
+    </script>
+      
 </body>
 </html>
