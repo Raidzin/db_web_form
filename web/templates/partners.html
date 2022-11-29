@@ -1,0 +1,27 @@
+{% extends 'components/base.html' %}
+{% block nav %}
+{% include 'components/navbar.html' %}
+{% endblock nav %}
+{% block content %}
+  <h2>Партнёры</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <td>Имя</td>
+        <td>ИНН</td>
+        <td>КПП</td>
+        <td>Адрес</td>
+      </tr>
+    </thead>
+    <tbody>
+    {% for partner in partners %}
+      <tr>
+        <td>{{ partner.name }}</td>
+        <td>{{ partner.inn }}</td>
+        <td>{{ partner.kpp }}</td>
+        <td>{{ partner.address }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}

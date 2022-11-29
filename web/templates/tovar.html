@@ -1,0 +1,25 @@
+{% extends 'components/base.html' %}
+{% block nav %}
+{% include 'components/navbar.html' %}
+{% endblock nav %}
+{% block content %}
+  <h2>Товар</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <td>Номенк. Номер</td>
+        <td>Наименование ТМЦ</td>
+        <td>Наименование ТМЦ КД</td>
+      </tr>
+    </thead>
+    <tbody>
+    {% for tovar in tovars %}
+      <tr>
+        <td>{{ tovar.nom_number }}</td>
+        <td>{{ tovar.name_tmc }}</td>
+        <td>{{ tovar.name_tmc_kd }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}

@@ -22,6 +22,9 @@ class DataBase:
         models.Head,
         models.Summary
     ]
+    @classmethod
+    def update_session(cls):
+        cls.session = Session(cls.engine)
 
     @classmethod
     def create_tables(cls):

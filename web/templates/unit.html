@@ -1,0 +1,25 @@
+{% extends 'components/base.html' %}
+{% block nav %}
+{% include 'components/navbar.html' %}
+{% endblock nav %}
+{% block content %}
+  <h2>Ед. измерения</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <td>Название кратк.</td>
+        <td>Название</td>
+        <td>ОКЕИ</td>
+      </tr>
+    </thead>
+    <tbody>
+    {% for unit in units %}
+      <tr>
+        <td>{{ unit.unit }}</td>
+        <td>{{ unit.name_unit }}</td>
+        <td>{{ unit.okei }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}
