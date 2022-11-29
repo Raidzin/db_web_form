@@ -75,11 +75,11 @@ class DataBase:
         cls.session.commit()
 
     @classmethod
-    def get_getter(cls, model):
-        def getter(model_id=None):
+    def get_selecter(cls, model):
+        def selecter(model_id=None):
             return cls.get_table(model, model_id=model_id)
 
-        return getter
+        return selecter
 
     @classmethod
     def get_updater(cls, model):
@@ -97,18 +97,18 @@ class DataBase:
 
     @classmethod
     def init_default_api(cls):
-        default_functions = (
-            ('select_', cls.get_getter),
+        crud_operations = (
+            ('select_', cls.get_selecter),
             ('update_', cls.get_updater),
             ('delete_', cls.get_deleter),
         )
         for table_name in cls.tables:
             func_name = table_name.__name__.lower()
-            for prefix, func in default_functions:
+            for prefix, operation in crud_operations:
                 setattr(
                     cls,
                     f'{prefix}{func_name}',
-                    func(table_name)
+                    operation(table_name)
                 )
 
 
