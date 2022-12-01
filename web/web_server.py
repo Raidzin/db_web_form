@@ -24,7 +24,7 @@ def unit():
 
 
 def start_server(debug=False):
-    app.run(debug=debug)
+    app.run(debug=debug, host="0.0.0.0")
 
 
 if __name__ == '__main__':
